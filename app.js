@@ -44,8 +44,7 @@ ${text[i]}
 </div>`;
 
   const secondoTesto = `<div class="imgs-right">
-<img src="${items[i]}" alt="img-right-0${i}" />
-<div class="select-overlay ${activeClassOverlay}"></div>
+<img class = "select-overlay ${activeClassOverlay} "src="${items[i]}" alt="img-right-0${i}" />
 </div>`;
 
   containerLeftImgs.innerHTML += primoTesto;
