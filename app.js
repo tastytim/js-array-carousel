@@ -18,31 +18,49 @@ const text = [
 
 let contatore = 0;
 
+// Abbiamo selezionati colonna destra e sinistra
 const containerLeftImgs = document.querySelector(".container-img-left");
 const containerRightImgs = document.querySelector(".container-img-right");
 
 for (let i = 0; i < items.length; i++) {
-  console.log(i);
 
-  const primoTesto = `<div class="imgs-left">
+
+  let activeClassOpacity = "";
+  let activeClassOverlay = "";
+
+
+  if (i === 0) {
+    activeClassOverlay = "overlay";
+    activeClassOpacity = "opacityuno";
+  }
+
+
+const primoTesto = 
+`<div class="imgs-left ${activeClassOpacity}">
 <img src="${items[i]}" alt="img-0${i}" />
 </div>
-<div class="text">
+<div class="text ${activeClassOpacity}">
 <h1>${title[i]}</h1>
 <p>
   ${text[i]}
 </p>
 </div>`;
 
-  const secondoTesto = `<div class="imgs-right">
+const secondoTesto = `<div class="imgs-right">
 <img src="${items[i]}" alt="img-right-0${i}" />
-<div class="overlay"></div>
+<div class="${activeClassOverlay}"></div>
 </div><i class="fas fa-chevron-circle-up fa-chevron-circle-up-custom"></i>
 <i class="fas fa-chevron-circle-up fa-chevron-circle-down-custom"></i>`;
 
 containerLeftImgs.innerHTML += primoTesto;
-
-  containerRightImgs.innerHTML += secondoTesto;
+containerRightImgs.innerHTML += secondoTesto;
 }
 
 
+
+const buttonUp = document.querySelector("fa-chevron-circle-up-custom");
+const buttonUp = document.querySelector("fa-chevron-circle-down-custom");
+
+buttonUp.addEventListener("click", function(){
+   
+});
